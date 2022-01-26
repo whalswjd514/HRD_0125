@@ -44,7 +44,12 @@
 	String cardno=request.getParameter("cardno");
 	String prodcount=request.getParameter("prodcount");
 	int pcount=0;
+	int price=0;
+	int total=0;
 	
+	if(cardno==null){
+		cardno="";
+	}
 	if(id==null){
 		id="";
 		name="";
@@ -54,13 +59,9 @@
 		pay="1";
 		cardno="";
 		prodcount="0";
-		pcount=0;
+		pcount=0;System.out.println("product테이블 읽기 실패"+cardno);
 	}else{
 		pcount=Integer.parseInt(prodcount);
-	}
-	
-	int price=0;
-	int total=0;
 	
 	try{
 		String sql="select productId,unitprice from product0125 where productId=?";
@@ -78,10 +79,10 @@
 			</script>
 			<%
 		}
-		cardno="";
 	}catch(SQLException e){
 		System.out.println("product테이블 읽기 실패");
 		e.printStackTrace();
+	}	
 	}
 %>
 <form name="form" method="post" action="insert_order.jsp">

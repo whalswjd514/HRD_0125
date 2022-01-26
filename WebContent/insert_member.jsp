@@ -17,7 +17,7 @@
 			alert("비밀번호를 입력하세요.");
 			document.form.password.focus();
 		}else{
-			form.action="insert_memberProcess.jsp"
+			form.action="insert_memberProcess.jsp";
 		}
 	}
 	
