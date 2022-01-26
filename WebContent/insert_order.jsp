@@ -43,6 +43,7 @@
 	String pay=request.getParameter("pay");
 	String cardno=request.getParameter("cardno");
 	String prodcount=request.getParameter("prodcount");
+	
 	int pcount=0;
 	int price=0;
 	int total=0;
@@ -59,7 +60,7 @@
 		pay="1";
 		cardno="";
 		prodcount="0";
-		pcount=0;System.out.println("product테이블 읽기 실패"+cardno);
+		pcount=0;
 	}else{
 		pcount=Integer.parseInt(prodcount);
 	
